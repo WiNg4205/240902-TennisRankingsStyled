@@ -8,7 +8,7 @@ const Header = {
   template: `
     <header :class="headerTheme">
       <h1>Men's Tennis Rankings ATP</h1>
-      <select v-model="selectedTheme">
+      <select class="text-black" v-model="selectedTheme">
         <option value="Simple">Simple</option>
         <option value="Playful">Playful</option>
         <option value="Elegant">Elegant</option>
@@ -25,14 +25,14 @@ const Header = {
     headerTheme() {
       switch (this.selectedTheme) {
         case 'Playful':
-          return 'bg-yellow-300 text-red-800 p-4 text-center'
+          return 'bg-violet-600 text-white p-4 text-center font-pally'
         case 'Elegant':
-          return 'bg-gray-800 text-white p-4 text-center'
+          return 'bg-gray-800 text-white font-serif p-4 text-center font-source-serif-pro'
         case 'Brutalist':
-          return 'bg-gray-900 text-gray-300 p-4 text-center'
+          return 'bg-gray-900 text-gray-300 p-4 text-center font-ibm-plex-mono'
         case 'Simple':
         default:
-          return 'bg-gray-200 text-gray-800 p-4 text-center'
+          return 'bg-gray-900 text-white p-4 text-center font-inter'
       }
     }
   },

@@ -51,7 +51,9 @@ const App = {
         {{ country }}
       </option>
     </select>
-    <Table :theme="selectedTheme" :filteredRankings="filteredRankings" />
+    <div class="flex justify-center">
+      <Table :theme="selectedTheme" :filteredRankings="filteredRankings" />
+    </div>
   `
 }
 

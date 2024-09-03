@@ -44,7 +44,7 @@ const Table = {
         </tr>
       </tbody>
     </table>
-  `  
+  `
 }
   
 export default Table

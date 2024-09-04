@@ -40,19 +40,33 @@ const App = {
       return this.selectedCountry === 'ALL'
         ? this.rankings
         : this.rankings.filter(ranking => ranking.country === this.selectedCountry)
-    }
+    },
+    fontTheme() {
+      switch (this.selectedTheme) {
+        case 'Playful':
+          return 'font-pally'
+        case 'Elegant':
+          return 'font-source-serif-pro'
+        case 'Brutalist':
+          return 'font-ibm-plex-mono'
+        case 'Simple':
+        default:
+          return 'font-inter'
+      }
+    },
   },
   template: `
     <Header :theme="selectedTheme" @update:theme="handleThemeChange" />
-    <p>{{ selectedTheme }}</p>
-    <h2>Week: {{ week }}</h2>
-    <select v-model="selectedCountry" name="countries" id="countries">
-      <option v-for="country in countries" :key="country" :value="country">
-        {{ country }}
-      </option>
-    </select>
-    <div class="flex justify-center">
-      <Table :theme="selectedTheme" :filteredRankings="filteredRankings" />
+    <div class="flex flex-col items-center" :class="fontTheme">
+      <div class="w-2/5 flex justify-between pb-4 pt-2">
+        <h2 class="font-semibold text-sm">Week: {{ week }}</h2>
+        <select class="border rounded-md border-gray-800" v-model="selectedCountry" name="countries" id="countries">
+          <option v-for="country in countries" :key="country" :value="country">
+            {{ country }}
+          </option>
+        </select>    
+      </div>
+      <Table class="w-2/5" :theme="selectedTheme" :filteredRankings="filteredRankings" />
     </div>
   `
 }

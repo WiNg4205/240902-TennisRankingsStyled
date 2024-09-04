@@ -7,8 +7,8 @@ const Header = {
   },
   template: `
     <header :class="headerTheme">
-      <h1>Men's Tennis Rankings ATP</h1>
-      <select class="text-black" v-model="selectedTheme">
+      <h1 class="text-lg font-bold">Men's Tennis Rankings ATP</h1>
+      <select class="text-black w-28 font-semibold" v-model="selectedTheme">
         <option value="Simple">Simple</option>
         <option value="Playful">Playful</option>
         <option value="Elegant">Elegant</option>

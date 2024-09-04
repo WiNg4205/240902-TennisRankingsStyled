@@ -58,7 +58,7 @@ const App = {
   template: `
     <Header :theme="selectedTheme" @update:theme="handleThemeChange" />
     <div class="flex flex-col items-center" :class="fontTheme">
-      <div class="w-2/5 flex justify-between pb-4 pt-2">
+      <div class="w-1/2 flex justify-between pb-4 pt-2">
         <h2 class="font-semibold text-sm">Week: {{ week }}</h2>
         <select class="border rounded-md border-gray-800" v-model="selectedCountry" name="countries" id="countries">
           <option v-for="country in countries" :key="country" :value="country">
@@ -66,7 +66,7 @@ const App = {
           </option>
         </select>    
       </div>
-      <Table class="w-2/5" :theme="selectedTheme" :filteredRankings="filteredRankings" />
+      <Table class="min-w-2/5" :theme="selectedTheme" :filteredRankings="filteredRankings" />
     </div>
   `
 }

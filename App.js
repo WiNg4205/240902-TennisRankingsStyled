@@ -60,7 +60,7 @@ const App = {
     <div class="flex flex-col items-center" :class="fontTheme">
       <div class="w-1/2 flex justify-between pb-4 pt-2">
         <h2 class="font-semibold text-sm">Week: {{ week }}</h2>
-        <select class="border rounded-md border-gray-800" v-model="selectedCountry" name="countries" id="countries">
+        <select class="border rounded-md border-gray-800 text-sm" v-model="selectedCountry" name="countries" id="countries">
           <option v-for="country in countries" :key="country" :value="country">
             {{ country }}
           </option>
